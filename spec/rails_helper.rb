@@ -35,6 +35,9 @@ end
 I18n.locale = :'pt-BR'
 
 RSpec.configure do |config|
+  # FactoryBot
+  config.include FactoryBot::Syntax::Methods
+  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

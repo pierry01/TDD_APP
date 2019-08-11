@@ -3,4 +3,26 @@
 <% end %>
 
 <h1>Listando Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= link_to 'Mostrar', customer_path(customer) %></td>
+        <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Excluir', customer, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Novo Cliente', new_customer_path %>
